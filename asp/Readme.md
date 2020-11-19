@@ -72,7 +72,6 @@ x1_crypt_source.asp -- asp加解密代码源文件。这不是Webshell。我将�
 <img src="https://github.com/xiaopan233/AntSword-Cryption-WebShell/blob/main/asp/pic/5.png" width=520>
 
 5. 连接到目标机器，可以发现post的数据已经进行了加密。但是回显加密暂时还没做
-Connect to your target.We can see the post data has been encrypted.But I haven't wrote the "Response crypted"
 
 <img src="https://github.com/xiaopan233/AntSword-Cryption-WebShell/blob/main/asp/pic/6.png" width=520>
 
