@@ -2,7 +2,7 @@
 
 [中文](#介绍)
 
-# Instruction
+# Introduction
 
 x1_encoder_php.js -- AntSword Encoder
 
