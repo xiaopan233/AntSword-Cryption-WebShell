@@ -1,0 +1,135 @@
+<script type="text/javascript">
+//html file use javascript to generate the key
+//使用js生成 key
+	var PublicKey=0
+	var PrivateKey=0
+	var Modulus=0
+
+	function Crypt(pLngMessage, pLngKey){
+		try{
+			var lLngMod = ''
+			var lLngResult = ''
+			var lLngIndex = 0
+			if(pLngKey % 2 == 0){
+				lLngResult = 1
+				for (lLngIndex = 0; lLngIndex < (pLngKey/2)-1; lLngIndex++) {
+					lLngMod = (pLngMessage * pLngMessage) % Modulus
+					lLngResult = (lLngMod * lLngResult) % Modulus  
+				}
+			}
+			else{
+				 lLngResult = pLngMessage 
+				 for (lLngIndex = 0; lLngIndex < (pLngKey/2)-1; lLngIndex++) {
+				 	lLngMod = (pLngMessage * pLngMessage) % Modulus 
+					lLngResult = (lLngMod * lLngResult) % Modulus
+				 }
+			}
+			return lLngResult
+		}
+		catch(err){
+			console.log(err)
+		}
+
+	}
+
+	function TestCrypt(pBytData){
+		var lStrCrypted = ''
+		lStrCrypted = Crypt(pBytData, PublicKey) 
+		if(Crypt(lStrCrypted, PrivateKey) == pBytData){
+			return 1
+		}
+		else{
+			return 0
+		}
+	}
+
+	function IsPrime(pLngNumber){
+		var lLngSquare = ''
+        var lLngIndex = ''
+        if(pLngNumber < 2){
+        	return 0
+        }
+        if(pLngNumber % 2 == 0){
+        	return 0
+        }
+        lLngSquare = Math.sqrt(pLngNumber)
+        for(lLngIndex=3; lLngIndex<=lLngSquare; lLngIndex+=2){
+        	if(pLngNumber % lLngIndex == 0){
+        		return 0
+        	}
+        }
+        return 1;
+	}
+
+	function Euler(pLngPHI, pLngKey){
+	    var lLngR = new Array() 
+	    var lLngP = new Array() 
+	    var lLngQ = new Array() 
+
+	    var lLngCounter = ''
+	    var lLngResult = ''
+
+	    lLngR[1] = pLngPHI
+	    lLngR[0] = pLngKey
+	    lLngP[1] = 0
+	    lLngP[0] = 1
+    	lLngQ[1] = 2
+    	lLngQ[0] = 0
+
+    	lLngCounter = -1
+
+    	while(lLngR[0] != 0){
+    		lLngR[2] = lLngR[1]
+    		lLngR[1] = lLngR[0]
+	        lLngP[2] = lLngP[1]
+	        lLngP[1] = lLngP[0]
+	        lLngQ[2] = lLngQ[1]
+	        lLngQ[1] = lLngQ[0]
+
+	        lLngCounter = lLngCounter + 1 
+
+	        lLngR[0] = lLngR[2] % lLngR[1] 
+	        lLngP[0] = (Math.floor(lLngR[2]/lLngR[1]) * lLngP[1]) + lLngP[2] 
+	        lLngQ[0] = (Math.floor(lLngR[2]/lLngR[1]) * lLngQ[1]) + lLngQ[2]
+    	}
+
+	    lLngResult = (pLngKey * lLngP[1]) - (pLngPHI * lLngQ[1]) 
+
+	    if(lLngResult > 0){
+	        return lLngP[1]
+	    }
+	    else{
+	        return Math.abs(lLngP[1]) + pLngPHI 
+	    } 
+	}
+
+	var lLngPhi = ''
+    var q = 0
+    var p = 0
+    var xxx = 0
+
+    while(!TestCrypt(255) || PublicKey >= 10000){
+		while(!IsPrime(p)){
+			p = Math.round(Math.random()*100)
+		}
+		while(!IsPrime(q)){
+			q = Math.round(Math.random()*100)
+		}
+
+		Modulus = Math.floor(p * q )
+	
+		PrivateKey = Math.floor((Math.random() * (Modulus-2))+2);
+
+		lLngPhi = Math.floor((p - 1) * (q - 1))
+		PublicKey = Euler(lLngPhi, PrivateKey)
+		xxx = xxx+1
+    	if(xxx >= 300){
+			break
+		}
+    }
+    console.log(xxx)
+	document.write("PublicKey is "+PublicKey+"</br>")
+	document.write("PrivateKey is "+PrivateKey+"</br>")
+	document.write("Modulus is "+Modulus+"</br>")
+
+</script>
