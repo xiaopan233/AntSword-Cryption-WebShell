@@ -8,7 +8,7 @@ x1_crypt.asp  --  The Webshell
 
 x1_crypt.html -- The cryption key generator
 
-x1_crypt.js -- The javascript code for AntSword encoder
+x1_encoder.js -- The javascript code for AntSword encoder
 
 x1_crypt_source.asp -- The data cryption source file.It is not a Webshell.I translate it from asp to javascript
 
@@ -19,7 +19,7 @@ x1_crypt_source.asp -- The data cryption source file.It is not a Webshell.I tran
 
 <img src="https://github.com/xiaopan233/AntSword-Cryption-WebShell/blob/main/asp/pic/1.png">
 
-2. copy the js code from file "x1_crypt.js" to your AntSword Encoder.Encoder type is "ASP"
+2. copy the js code from file "x1_encoder.js" to your AntSword Encoder.Encoder type is "ASP"
 
 3. we must change the key in our webshell and AntSword
 
@@ -46,7 +46,7 @@ x1_crypt.asp  --  马
 
 x1_crypt.html -- 加解密密钥生成器
 
-x1_crypt.js -- 蚁剑的编码器代码
+x1_encoder.js -- 蚁剑的编码器代码
 
 x1_crypt_source.asp -- asp加解密代码源文件。这不是Webshell。我将其加密算法从 asp 转换成 javascript。感兴趣的可以学习学习
 
@@ -57,7 +57,7 @@ x1_crypt_source.asp -- asp加解密代码源文件。这不是Webshell。我将�
 
 <img src="https://github.com/xiaopan233/AntSword-Cryption-WebShell/blob/main/asp/pic/1.png">
 
-2. 从 "x1_crypt.js" 中复制 js 代码出来，复制到蚁剑的编码器中。注意创建编码器的时候类型要选择 ASP
+2. 从 "x1_encoder.js" 中复制 js 代码出来，复制到蚁剑的编码器中。注意创建编码器的时候类型要选择 ASP
 
 3. 修改webshell 和 蚁剑编码器中的 key 值
 
