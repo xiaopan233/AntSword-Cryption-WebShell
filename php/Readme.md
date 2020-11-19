@@ -12,7 +12,7 @@ Notice that you can modify the argument "number" or not.
 
 In these three file,the value of argument "number" must be the same! The argument "number" is the vaule of encryption offset.
 
-<img src="https://github.com/xiaopan233/AntSword-Cryption-WebShell/blob/main/php/pic/1.png" width=500>
+<img src="https://github.com/xiaopan233/AntSword-Cryption-WebShell/blob/main/php/pic/1.png" width=700>
 
 # 介绍
 
@@ -28,4 +28,4 @@ x1_crypt.php -- 马
 
 在这三个文件中， "number" 参数的值必须一样。这是加密偏移量。
 
-<img src="https://github.com/xiaopan233/AntSword-Cryption-WebShell/blob/main/php/pic/1.png" width=500>
+<img src="https://github.com/xiaopan233/AntSword-Cryption-WebShell/blob/main/php/pic/1.png" width=700>
