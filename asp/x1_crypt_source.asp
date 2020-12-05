@@ -2,9 +2,9 @@
 <%
 Class clsRSA 
 ' This is a crypt algorithm source file.If you are interested in how it work.Read this code
-' 本文件为加密算法的源文件，如果想学习下如何对字符串进行加密的可以看看这个源码
-    Public PrivateKey 
+' 本文件为加密算法的源文件，如果想学习下如何对字符串进行加密的可以看看这个源码 
     Public PublicKey
+    Public PrivateKey
     Public Modulus 
 
     Public Sub GenKey()
